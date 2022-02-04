@@ -12,6 +12,8 @@ def load_image(file):
     return ScintigraphyImage(file)
 
 
+st.set_page_config(page_title='Scyntygrafia')
+
 st.title('Scyntygrafia - pole powierzchni')
 image_file = st.file_uploader('Plik')
 
