@@ -15,7 +15,7 @@ def load_image(file):
 st.set_page_config(page_title='Scyntygrafia')
 
 st.title('Scyntygrafia - pole powierzchni')
-image_file = st.file_uploader('Plik')
+image_file = st.file_uploader('Plik IMA')
 
 if image_file is not None:
     img = load_image(image_file)
