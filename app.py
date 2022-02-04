@@ -20,7 +20,7 @@ image_file = st.file_uploader('Plik IMA')
 if image_file is not None:
     img = load_image(image_file)
 
-    col1, col2 = st.columns(2)
+    col1, col2, col3 = st.columns(3)
     img_num = col1.slider('Obraz', 1, img.imgs_num, step=1)
     invert = col1.checkbox('Odwróć')
     use_threshold = col1.checkbox('Progowanie')
@@ -28,5 +28,8 @@ if image_file is not None:
     if use_threshold:
         threshold = col1.slider('Próg', 0.0, 1.0)
         col1.metric('Pole powierzchni [cm^2]', img.get_area(img_num - 1, threshold))
+        col3.image(img.get_image(img_num - 1, invert, threshold))
+    else:
+        col3.empty()
 
-    col2.image(img.get_image(img_num - 1, invert, threshold))
+    col2.image(img.get_image(img_num - 1, invert))
