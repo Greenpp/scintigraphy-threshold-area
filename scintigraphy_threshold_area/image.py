@@ -65,4 +65,4 @@ class ScintigraphyImage:
         pxs = (self.imgs[num] > threshold).sum()
         area = pxs * self.x_px_size * self.y_px_size
 
-        return round(area, precision)
+        return round(area / 100, precision)

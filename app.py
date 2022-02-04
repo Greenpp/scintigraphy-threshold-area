@@ -25,6 +25,6 @@ if image_file is not None:
     threshold = None
     if use_threshold:
         threshold = col1.slider('Próg', 0.0, 1.0)
-        col1.metric('Pole powierzchni [mm^2]', img.get_area(img_num, threshold))
+        col1.metric('Pole powierzchni [cm^2]', img.get_area(img_num, threshold))
 
     col2.image(img.get_image(img_num - 1, invert, threshold))
